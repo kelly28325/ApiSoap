@@ -18,3 +18,20 @@ Este proyecto es una API SOAP desarrollada con Spring Boot que permite consultar
 ```bash
 git clone https://github.com/kelly28325/ApiSoap.git
 cd ApiSoap
+
+### 2. Ejecutar la aplicación
+Usa Maven desde la terminal ejecuta lo siguiente:
+mvn spring-boot:run
+
+## Probar la API SOAP
+### 1. Acceder al WSDL
+Una vez ejecutada la aplicación, abre el navegador en:
+
+http://localhost:8080/ws/tracking.wsdl
+
+Usar herramienta cliente SOAP
+### SOAP UI
+
+🧑‍💻 Autora: Kelly Altamirano
+
+📦 Repositorio: https://github.com/kelly28325/ApiSoap
