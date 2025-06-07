@@ -1,6 +1,8 @@
-# API SOAP - Seguimiento de Paquetes (Tracking)
+# 📦 API SOAP - Seguimiento de Paquetes (Tracking)
 
-Este proyecto es una API SOAP desarrollada con Spring Boot que permite consultar el estado de un paquete logístico a través de su código.
+Este proyecto es una API SOAP desarrollada con **Spring Boot** que permite consultar el estado de un paquete logístico a través de su código de seguimiento.
+
+---
 
 ## 🚀 Tecnologías utilizadas
 
@@ -14,24 +16,83 @@ Este proyecto es una API SOAP desarrollada con Spring Boot que permite consultar
 
 ## 📦 Cómo desplegar la API
 
-### 1. Clonar el repositorio
+### 1️⃣ Clonar el repositorio
+
 ```bash
 git clone https://github.com/kelly28325/ApiSoap.git
 cd ApiSoap
+```
 
-### 2. Ejecutar la aplicación
-Usa Maven desde la terminal ejecuta lo siguiente:
+### 2️⃣ Ejecutar la aplicación
+
+```bash
 mvn spring-boot:run
+```
 
-## Probar la API SOAP
+O desde tu IDE, ejecuta la clase `SoapTrackingApplication.java`.
+
+---
+
+## 🔍 Probar la API SOAP
+
 ### 1. Acceder al WSDL
-Una vez ejecutada la aplicación, abre el navegador en:
 
+Abre el navegador en:
+
+```
 http://localhost:8080/ws/tracking.wsdl
+```
 
-Usar herramienta cliente SOAP
-### SOAP UI
+Este archivo define el servicio y permite generar clientes SOAP.
 
-🧑‍💻 Autora: Kelly Altamirano
+---
 
-📦 Repositorio: https://github.com/kelly28325/ApiSoap
+### 2. Usar herramienta cliente SOAP
+
+Puedes usar [SOAP UI](https://www.soapui.org/) u otra herramienta para enviar una solicitud. 
+
+---
+
+### 🧪 Ejemplo de Request SOAP
+
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:trk="http://www.logistica.com/soaptracking">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trk:GetTrackingStatusRequest>
+         <trk:trackingCode>ABC123</trk:trackingCode>
+      </trk:GetTrackingStatusRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
+---
+
+### 📬 Ejemplo de Respuesta SOAP
+
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:trk="http://www.logistica.com/soaptracking">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trk:GetTrackingStatusResponse>
+         <trk:status>En tránsito</trk:status>
+         <trk:events>
+            <trk:event>
+               <trk:location>Quito</trk:location>
+               <trk:timestamp>2025-06-01T10:00:00</trk:timestamp>
+            </trk:event>
+         </trk:events>
+      </trk:GetTrackingStatusResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
+---
+
+## 🧑‍💻 Autora
+
+- **Kelly Altamirano**
+- 📦 Repositorio: [https://github.com/kelly28325/ApiSoap]
+
